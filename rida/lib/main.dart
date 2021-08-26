@@ -88,6 +88,40 @@ class _MyHomePageState extends State<MyHomePage> {
             // horizontal).
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 8, vertical: 20),
+                decoration: BoxDecoration(
+                  color: Colors.cyanAccent,
+                ),
+                child: Row(children: [
+                  
+                  Expanded(
+                    flex: 2,
+                    child: Container(child: Center(child: Text('1')),height: 50, decoration: BoxDecoration(
+                      color: Colors.orangeAccent
+                    ),),
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: Container(child: Center(child: Text('2')),height: 50,decoration: BoxDecoration(
+                      color: Colors.lime
+                    )),
+                  ),
+                  Expanded(
+                    flex: 3,
+                    child: Container(child: Center(child: Text('3')),height: 50, decoration: BoxDecoration(
+                      color: Colors.purple
+                    )),
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: Container(child: Center(child: Text('4')),height: 50,decoration: BoxDecoration(
+                      color: Colors.green
+                    )),
+                  ),
+                ],)
+              ),
+              
               GestureDetector(
                 onTap: _incrementCounter,
                 child: Container(
