@@ -70,84 +70,32 @@ class _MyHomePageState extends State<MyHomePage> {
           // the App.build method, and use it to set our appbar title.
           title: Text(widget.title),
         ),
-        body: Center(
+        body: ListView(
           // Center is a layout widget. It takes a single child and positions it
           // in the middle of the parent.
-          child: Column(
-            // Column is also a layout widget. It takes a list of children and
-            // arranges them vertically. By default, it sizes itself to fit its
-            // children horizontally, and tries to be as tall as its parent.
-            //
-            // Invoke "debug painting" (press "p" in the console, choose the
-            // "Toggle Debug Paint" action from the Flutter Inspector in Android
-            // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-            // to see the wireframe for each widget.
-            //
-            // Column has various properties to control how it sizes itself and
-            // how it positions its children. Here we use mainAxisAlignment to
-            // center the children vertically; the main axis here is the vertical
-            // axis because Columns are vertical (the cross axis would be
-            // horizontal).
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 8, vertical: 20),
-                decoration: BoxDecoration(
-                  color: Colors.cyanAccent,
-                ),
-                child: Row(children: [
-                  
-                  Expanded(
-                    flex: 2,
-                    child: Container(child: Center(child: Text('1')),height: 50, decoration: BoxDecoration(
-                      color: Colors.orangeAccent
-                    ),),
-                  ),
-                  Expanded(
-                    flex: 2,
-                    child: Container(child: Center(child: Text('2')),height: 50,decoration: BoxDecoration(
-                      color: Colors.lime
-                    )),
-                  ),
-                  Expanded(
-                    flex: 3,
-                    child: Container(child: Center(child: Text('3')),height: 50, decoration: BoxDecoration(
-                      color: Colors.purple
-                    )),
-                  ),
-                  Expanded(
-                    flex: 10,
-                    child: Container(child: Center(child: Text('4')),height: 50,decoration: BoxDecoration(
-                      color: Colors.green
-                    )),
-                  ),
-                ],
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,),
+          children: [
+            Container(
+              height: 500,
+              margin: EdgeInsets.symmetric(horizontal: 3),
+              decoration: BoxDecoration(
+                color: Colors.orangeAccent
               ),
-              
-              GestureDetector(
-                onTap: _incrementCounter,
-                child: Container(
-                  padding: EdgeInsets.symmetric(vertical: 30),
-                  margin: EdgeInsets.symmetric(horizontal: 8),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    color: Colors.lightGreen[500]
-                  ),
-                  child: Center(child: Text('Tap me fam', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18, color: Colors.white,),),),
-                ),
-    
+            ),
+            Container(
+              height: 500,
+              margin: EdgeInsets.symmetric(horizontal: 3),
+              decoration: BoxDecoration(
+                color: Colors.greenAccent
               ),
-              Padding(padding: EdgeInsets.symmetric(vertical: 20),),
-              Text(
-                'pushed the button this many times:',
+            ),
+            Container(
+              height: 500,
+              margin: EdgeInsets.symmetric(horizontal: 3),
+              decoration: BoxDecoration(
+                color: Colors.blue
               ),
-              Text(
-                '$_counter',
-                style: Theme.of(context).textTheme.headline4,
-              ),
-            ],
-          ),
+            )
+          ],
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: _incrementCounter,
