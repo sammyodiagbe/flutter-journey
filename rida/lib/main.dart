@@ -119,7 +119,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       color: Colors.green
                     )),
                   ),
-                ],)
+                ],
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,),
               ),
               
               GestureDetector(
