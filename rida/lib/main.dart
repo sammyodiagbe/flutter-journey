@@ -10,12 +10,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      
       theme: ThemeData(
 
-        primarySwatch: Colors.orange,
+        primarySwatch: Colors.lightGreen,
       ),
       debugShowCheckedModeBanner: false,
-      home: MyHomePage(title: 'Puckeet'),
+      home: MyHomePage(title: 'Pockeet'),
     );
   }
 }
@@ -64,6 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
       top: false,
       child: Scaffold(
         appBar: AppBar(
+          elevation: 0,
           // Here we take the value from the MyHomePage object that was created by
           // the App.build method, and use it to set our appbar title.
           title: Text(widget.title),
@@ -114,7 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     )),
                   ),
                   Expanded(
-                    flex: 2,
+                    flex: 10,
                     child: Container(child: Center(child: Text('4')),height: 50,decoration: BoxDecoration(
                       color: Colors.green
                     )),
@@ -132,7 +134,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     borderRadius: BorderRadius.circular(5),
                     color: Colors.lightGreen[500]
                   ),
-                  child: Center(child: Text('Tap me fam', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18, color: Colors.white),),),
+                  child: Center(child: Text('Tap me fam', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18, color: Colors.white,),),),
                 ),
     
               ),
