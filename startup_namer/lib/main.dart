@@ -11,12 +11,15 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       title: 'Startup namer',
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Startup namer')
+          title: Text('Startup namer'),
+          elevation: 0,
         ),
         body: Container(
-          child: Center(child: Text('Hello there'),),
+          child: Center(child: TextButton(onPressed: null, child: Text('Hello there'),
+          ),),
         ),
       ),
     );
