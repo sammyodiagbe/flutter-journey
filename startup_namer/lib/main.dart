@@ -13,11 +13,14 @@ class MyApp extends StatelessWidget {
     // final wordPair = WordPair.random();
     return MaterialApp(
       title: 'Startup namer',
+      theme: ThemeData(
+        primaryColor: Colors.white,
+      ),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: Text('Startup namer'),
-          elevation: 0,
+          elevation: 0.3,
         ),
         body: RandomWords()
       ),
