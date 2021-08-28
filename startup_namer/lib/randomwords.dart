@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "package:english_words/english_words.dart";
+import 'package:startup_namer/suggestions.dart';
 
 class RandomWords extends StatefulWidget {
   const RandomWords({ Key? key }) : super(key: key);
@@ -53,7 +54,19 @@ class _RandomWordsState extends State<RandomWords> {
   }
   @override
   Widget build(BuildContext context) {
-    return _buildSuggestions();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Startup namer'),
+        actions: [
+           IconButton(icon: Icon(Icons.list), onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Suggestions(_favourites))
+              ,);
+
+            }, iconSize: 40,)
+        ]
+      ),
+      body: _buildSuggestions(),
+    );
   }
 }
 

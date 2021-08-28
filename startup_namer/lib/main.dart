@@ -17,19 +17,28 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.white,
       ),
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
+      home: Home(),
+    );
+  }
+}
+
+class Home extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
         appBar: AppBar(
           title: Text('Startup namer'),
           elevation: 0.3,
           actions: [
             IconButton(icon: Icon(Icons.list), onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: ( context) => Suggestions()),);
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Suggestions())
+              ,);
 
             }, iconSize: 40,)
           ],
         ),
         body: RandomWords()
-      ),
-    );
+      );
   }
 }
