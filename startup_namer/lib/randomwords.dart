@@ -9,18 +9,20 @@ class RandomWords extends StatefulWidget {
 }
 
 class _RandomWordsState extends State<RandomWords> {
-  final wordPair = WordPair.random();
   final _suggestions = <WordPair>[];
   final _biggerFont = const TextStyle(fontSize: 18);
 
   Widget _buildSuggestions() {
-    return ListView.builder(padding: EdgeInsets.all(8),itemBuilder: (BuildContext _context, int i) {
+    return ListView.builder(
+      padding: EdgeInsets.all(5), 
+      itemBuilder: (BuildContext _context, int i) {
       if(i.isOdd) {
         return Divider();
       }
 
       int index = i ~/ 2;
       if(index >= _suggestions.length) {
+        // generate another 10 words and add to the list of word pairs
         _suggestions.addAll(generateWordPairs().take(10));
       }
       return _buildRow(_suggestions[index]);
