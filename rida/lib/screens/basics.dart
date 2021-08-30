@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:rida/screens/drawer.dart';
 
 class Basics extends StatelessWidget {
 
@@ -6,14 +7,14 @@ class Basics extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Scaffold(
+      drawer: CustomDrawer(context),
       appBar: AppBar(
         title: Text('Basics'),
-        leading: Icon(Icons.design_services),
       ),
       body: ListView(
         children: [
           ListTile(leading: Icon(Icons.art_track_sharp), title: Text('Snackbar'), onTap: () {
-           Navigator.of(context).pushNamed("/snackbar");
+           Navigator.of(context).pushNamed("/basics/snackbar");
           })
         ],
       ),
