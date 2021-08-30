@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rida/screens/basics/appbar.dart';
 import 'package:rida/screens/basics/snackbar.dart';
 import 'package:rida/screens/homepage.dart';
 import 'package:rida/screens/basics.dart';
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
       routes: {
         "/basics": (context) => Basics(),
-        "/basics/snackbar": (context) => Snackbar()
+        "/basics/snackbar": (context) => Snackbar(),
+        "/basics/appbar": (context) => Appbar()
       },
       theme: ThemeData(
         fontFamily: "Alata",

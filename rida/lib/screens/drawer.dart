@@ -14,7 +14,8 @@ CustomDrawer(BuildContext context) {
            onTap: () {
               Navigator.of(context).pushNamed("/basics");
            },
-         )]
+         ),
+         ]
 
         ),
       );

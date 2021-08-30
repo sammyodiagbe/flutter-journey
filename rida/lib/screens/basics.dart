@@ -15,7 +15,10 @@ class Basics extends StatelessWidget {
         children: [
           ListTile(leading: Icon(Icons.art_track_sharp), title: Text('Snackbar'), onTap: () {
            Navigator.of(context).pushNamed("/basics/snackbar");
-          })
+          }),
+          ListTile(leading: Icon(Icons.art_track_sharp), title: Text('App bar'), onTap: () {
+           Navigator.of(context).pushNamed("/basics/appbar");
+          }),
         ],
       ),
     );
