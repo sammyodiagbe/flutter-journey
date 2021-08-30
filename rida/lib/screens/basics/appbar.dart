@@ -15,7 +15,13 @@ class Appbar extends StatelessWidget {
         ),
         actions: [
           IconButton(onPressed: () {
-            AlertDialog (title: Text('Some message should appear here'),);
+            showDialog(context: context, builder: (_) {
+              return AlertDialog (title: Text('Terms and Services'), content: Text("Do you accept this terms"), actions: [
+               TextButton(onPressed: () {}, child: Text('Yes')),
+               TextButton(onPressed: () {}, child: Text('No')),
+              ], elevation: 24, );
+            });
+            
           }, icon: Icon(Icons.notification_add_outlined)),
           IconButton(onPressed: () {},icon: Icon(Icons.verified_user))
         ],
