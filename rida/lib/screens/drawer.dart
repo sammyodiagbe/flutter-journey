@@ -12,7 +12,7 @@ CustomDrawer(BuildContext context) {
          ), ListTile(
            leading: Text('Design'),
            onTap: () {
-              Navigator.of(context).pushNamed("/basics");
+              Navigator.of(context).pushNamedAndRemoveUntil("/basics", (route) => false);
            },
          ),
          ]

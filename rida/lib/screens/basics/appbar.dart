@@ -10,11 +10,19 @@ class Appbar extends StatelessWidget {
         title: Text("Flutter appbar"),
         titleSpacing: 1,
         elevation: 0,
+        actionsIconTheme: IconThemeData(
+          size: 18
+        ),
         actions: [
-          IconButton(onPressed: null, icon: Icon(Icons.notification_add_outlined)),
-          IconButton(onPressed: null,icon: Icon(Icons.verified_user))
+          IconButton(onPressed: () {
+            AlertDialog (title: Text('Some message should appear here'),);
+          }, icon: Icon(Icons.notification_add_outlined)),
+          IconButton(onPressed: () {},icon: Icon(Icons.verified_user))
         ],
       ),
+      body: Container(
+        child: Center(child: Text('Understanding how flutter appbar works.'),),
+      )
     );
   }
 }
