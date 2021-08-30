@@ -21,6 +21,11 @@ class Suggestions extends StatelessWidget {
         title: Text('Your favourites.'),
       ),
       body: ListView(children: divided,),
+      drawer: Drawer(
+        child: Center(
+          child: Text('Drawer is that easy'),
+        ),
+      ),
     );
   }
 }
