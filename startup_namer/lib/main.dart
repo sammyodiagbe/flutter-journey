@@ -13,7 +13,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Startup namer',
       theme: ThemeData(
-        primaryColor: Colors.white,
+        primaryColor: Colors.black,
+        accentColor: Colors.grey
       ),
       debugShowCheckedModeBanner: false,
       home: RandomWords(),
