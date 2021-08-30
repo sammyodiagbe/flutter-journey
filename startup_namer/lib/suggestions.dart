@@ -54,6 +54,11 @@ class Suggestions extends StatelessWidget {
           // ...
         },
       ),
+      ListTile(
+        trailing: ElevatedButton(child: Text('Show snackbar'), onPressed: () {
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Hey yo let get coding')));
+        }, ),
+      )
     ],
   ),
 ),

@@ -14,7 +14,10 @@ class MyApp extends StatelessWidget {
       title: 'Startup namer',
       theme: ThemeData(
         primaryColor: Colors.black,
-        accentColor: Colors.grey
+        accentColor: Colors.grey,
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(primary: Colors.blueAccent,)
+        )
       ),
       debugShowCheckedModeBanner: false,
       home: RandomWords(),
