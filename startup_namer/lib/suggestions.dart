@@ -56,7 +56,8 @@ class Suggestions extends StatelessWidget {
       ),
       ListTile(
         trailing: ElevatedButton(child: Text('Show snackbar'), onPressed: () {
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Hey yo let get coding')));
+          Navigator.pop(context);
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Hey yo let get coding'),duration: Duration(seconds: 10), action: SnackBarAction(label: 'Undo', onPressed: (){},)),);
         }, ),
       )
     ],
