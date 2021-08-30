@@ -35,8 +35,8 @@ class ColumsRows extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
             child: Row(children: [
             
-              Container(child: Center(child: Text('Box 1')), decoration: BoxDecoration(color: Colors.orange), height: 100, width: 100),
-              Container(child: Center(child: Text('Box 1')), decoration: BoxDecoration(color: Colors.cyan), height: 100, width: 100),
+              Expanded(child: Container(child: Center(child: Text('Box 1')), decoration: BoxDecoration(color: Colors.orange), height: 100, width: 100)),
+              Expanded(child: Container(child: Center(child: Text('Box 1')), decoration: BoxDecoration(color: Colors.cyan), height: 100, width: 100)),
               Container(child: Center(child: Text('Box 1')), decoration: BoxDecoration(color: Colors.blue), height: 100, width: 100),
             ],
             mainAxisAlignment: MainAxisAlignment.center,
