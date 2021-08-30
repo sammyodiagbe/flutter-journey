@@ -10,7 +10,7 @@ CustomDrawer(BuildContext context) {
               Navigator.of(context).pushNamed("/");
            },
          ), ListTile(
-           leading: Text('Design'),
+           leading: Text('Basic Widgets'),
            onTap: () {
               Navigator.of(context).pushNamedAndRemoveUntil("/basics", (route) => false);
            },

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rida/screens/basics/appbar.dart';
+import 'package:rida/screens/basics/columnsRows.dart';
 import 'package:rida/screens/basics/snackbar.dart';
 import 'package:rida/screens/homepage.dart';
 import 'package:rida/screens/basics.dart';
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
       routes: {
         "/basics": (context) => Basics(),
         "/basics/snackbar": (context) => Snackbar(),
-        "/basics/appbar": (context) => Appbar()
+        "/basics/appbar": (context) => Appbar(),
+        "/basics/columns-and-rows": (context) => ColumsRows()
       },
       theme: ThemeData(
         fontFamily: "Alata",
