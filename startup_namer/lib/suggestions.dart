@@ -34,10 +34,12 @@ class Suggestions extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.blue,
         ),
-        child: Text('Drawer Header'),
+        child: Center(child: Text('Drawer Header')),
       ),
       ListTile(
         title: const Text('Item 1'),
+        trailing: Icon(Icons.notification_add_outlined),
+        leading: CircleAvatar(backgroundColor: Colors.limeAccent, ),
         onTap: () {
           // Update the state of the app.
           // ...
@@ -45,6 +47,8 @@ class Suggestions extends StatelessWidget {
       ),
       ListTile(
         title: const Text('Item 2'),
+        leading: CircleAvatar(backgroundColor: Colors.grey, ),
+        trailing: Icon(Icons.notifications_active),
         onTap: () {
           // Update the state of the app.
           // ...
