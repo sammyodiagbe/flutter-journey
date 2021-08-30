@@ -14,7 +14,6 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       initialRoute: "/",
       routes: {
-        '/' : (context) => Home(),
         "/design": (context) => Design()
       },
       theme: ThemeData(

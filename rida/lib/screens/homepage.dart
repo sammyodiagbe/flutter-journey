@@ -10,7 +10,7 @@ class Home extends StatelessWidget {
          children: [ ListTile(
            leading: Text('Design'),
            onTap: () {
-             
+              Navigator.of(context).pushNamed("/design");
            },
          )]
 
