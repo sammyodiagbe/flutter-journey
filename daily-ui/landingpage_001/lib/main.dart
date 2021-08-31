@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(MyApp());
@@ -37,8 +38,24 @@ class LandingPage extends StatelessWidget {
         ),
         body: Container(
           child: ListView(children: [
-            Padding(child: Text("Become a better developer 100 days.",textAlign: TextAlign.center, style: _largeFont), padding: EdgeInsets.symmetric(vertical: 20, horizontal: 35),),
-             Padding(child: Text("Daily Ui is a series of daily challenges, design inspirations and neat suprise rewards.",textAlign: TextAlign.center, style: _smallFont), padding: EdgeInsets.symmetric(vertical: 20, horizontal: 25),)
+            Image(image: AssetImage("assets/curious.png")),
+            Padding(child: Text("Become a better developer in 100 days.",textAlign: TextAlign.center, style: _largeFont), padding: EdgeInsets.symmetric(vertical: 5, horizontal: 30),),
+             Padding(child: Text("Daily Ui is a series of daily challenges, design inspirations and neat suprise rewards.",textAlign: TextAlign.center, style: _smallFont), padding: EdgeInsets.symmetric(vertical: 20, horizontal: 25),),
+              Padding(child: Text("And it is 100% free. Pretty sweet huh?",textAlign: TextAlign.center, style: _smallFont), padding: EdgeInsets.symmetric(vertical: 20, horizontal: 25),),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 30),
+                child: TextField(
+                  
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(Icons.email, color: Colors.white,),
+                    hintText: 'Email Address',
+                    fillColor: Colors.white,
+                    border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(5))),
+                    hintStyle: TextStyle(color: Colors.white),
+                    labelStyle: TextStyle(color: Colors.orange)
+                  ),
+                )
+              )
           ],
           ),
           decoration: BoxDecoration(color: Color(0xff279af6),),
