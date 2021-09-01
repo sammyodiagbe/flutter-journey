@@ -13,7 +13,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Color(0xff279af6)
+        primaryColor: Color(0xff279af6),
+        fontFamily: "Roboto"
       ),
       home: LandingPage()
     );
