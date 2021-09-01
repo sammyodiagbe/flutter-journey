@@ -45,15 +45,31 @@ class LandingPage extends StatelessWidget {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 30),
                 child: TextField(
-                  
+                  keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     prefixIcon: Icon(Icons.email, color: Colors.white,),
                     hintText: 'Email Address',
                     fillColor: Colors.white,
-                    border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(5))),
+                    // enabledBorder: BorderSide(color: Colors.white),
+                    border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(5)), borderSide: BorderSide(color: Colors.white)),
+                    enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(5)), borderSide: BorderSide(color: Colors.white)),
+                    focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(5)), borderSide: BorderSide(color: Colors.orange)),
                     hintStyle: TextStyle(color: Colors.white),
                     labelStyle: TextStyle(color: Colors.orange)
                   ),
+                )
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 20, bottom: 20),
+                child: Center(
+                  child: ElevatedButton(child: Text('Join community.' , style:TextStyle(color: Colors.black, fontWeight: FontWeight.normal) ,), onPressed: (){},
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.white,
+                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30)
+                    )
+                  )),
                 )
               )
           ],
