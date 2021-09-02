@@ -47,6 +47,7 @@ class LandingPage extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 30),
                 child: TextField(
                   keyboardType: TextInputType.emailAddress,
+                  style: TextStyle(color: Colors.white),
                   decoration: InputDecoration(
                     prefixIcon: Icon(Icons.email, color: Colors.white,),
                     hintText: 'Email Address',
