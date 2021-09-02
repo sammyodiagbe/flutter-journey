@@ -50,7 +50,9 @@ class LandingPage extends StatelessWidget {
                   decoration: InputDecoration(
                     prefixIcon: Icon(Icons.email, color: Colors.white,),
                     hintText: 'Email Address',
+                    focusColor: Colors.white,
                     fillColor: Colors.white,
+                    floatingLabelBehavior: FloatingLabelBehavior.always,
                     // enabledBorder: BorderSide(color: Colors.white),
                     border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(5)), borderSide: BorderSide(color: Colors.white)),
                     enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(5)), borderSide: BorderSide(color: Colors.white)),
