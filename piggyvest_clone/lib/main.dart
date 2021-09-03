@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
       enableFeedback: false,
 
       showUnselectedLabels: true,
-      iconSize: 30,
+      iconSize: 20,
         onTap: _onItemTapped
       ),
       body: Center(child: _widgetOptions.elementAt(_selectedIndex),),
