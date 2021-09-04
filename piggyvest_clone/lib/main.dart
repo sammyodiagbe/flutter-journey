@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:piggyvest_clone/screens/home.dart';
+import 'package:piggyvest_clone/screens/school.dart';
 
 void main() {
   runApp(MyApp());
@@ -37,16 +39,12 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-    ),
+  final List<Widget> _widgetOptions = <Widget>[
+    Home(),
     Text(
       'Index 1: Business',
     ),
-    Text(
-      'Index 2: School',
-    ),
+    School(),
     Text(
       'Index 3: Profile',
     ),
@@ -56,8 +54,10 @@ class _MyHomePageState extends State<MyHomePage> {
   ];
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(items: [
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home', ),
 
         BottomNavigationBarItem(icon: Icon(Icons.app_blocking), label: 'blocking',),
@@ -67,15 +67,15 @@ class _MyHomePageState extends State<MyHomePage> {
       ],
       currentIndex: _selectedIndex,
       backgroundColor: Colors.white,
-      selectedItemColor: Colors.indigo[800],
+      selectedItemColor: Colors.green[800],
       unselectedItemColor: Colors.grey,
       enableFeedback: false,
 
       showUnselectedLabels: true,
-      iconSize: 20,
+      iconSize: 24,
         onTap: _onItemTapped
       ),
-      body: Center(child: _widgetOptions.elementAt(_selectedIndex),),
+      body: _widgetOptions.elementAt(_selectedIndex),
        // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
