@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:flutter/rendering.dart';
 
 
 class Home extends StatelessWidget {
@@ -6,7 +7,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final _titleFontStyle = TextStyle(fontWeight: FontWeight.bold, fontSize: 24);
+    final _titleFontStyle = TextStyle(fontWeight: FontWeight.bold, fontSize: 28);
     return Scaffold(
       
       body: Container(
@@ -17,7 +18,17 @@ class Home extends StatelessWidget {
               title: Text('Samson', style: _titleFontStyle),
               subtitle: Text('Good morning, wash your hands.'),
               trailing: CircleAvatar(child: Icon(Icons.person, color: Colors.white,), backgroundColor: Colors.indigo ,),
-            )
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 10),
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  Container(),
+                  Container()
+                ],
+              ),
+              )
           ]
           
         ),
