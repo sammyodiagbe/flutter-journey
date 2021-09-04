@@ -12,7 +12,7 @@ class Home extends StatelessWidget {
     final buildContainer = (double height, Color color) {
       return Container(
         height: height,
-        width: MediaQuery.of(context).size.width / 2 + 50,
+        width: MediaQuery.of(context).size.width / 2 + 100,
         margin: EdgeInsets.only(right: 15),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
