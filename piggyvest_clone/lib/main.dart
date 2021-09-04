@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.indigo,
         fontFamily: 'Alata'
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
@@ -67,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ],
       currentIndex: _selectedIndex,
       backgroundColor: Colors.white,
-      selectedItemColor: Colors.green[800],
+      selectedItemColor: Colors.indigo[800],
       unselectedItemColor: Colors.grey,
       enableFeedback: false,
 
