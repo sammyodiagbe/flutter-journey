@@ -34,7 +34,31 @@ class Home extends StatelessWidget {
           }
           );     
     };
+    final getStartedWithPiggyVest = () {
+      return Container(
 
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('Get Started with piggyvest'),
+            Container(
+              height: 120,
+              margin: EdgeInsets.symmetric(vertical: 15),
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              child: Row(
+                children: [
+                  Text('Get Started', style: TextStyle(fontSize: 28, color: Colors.white),),
+                ],
+              ),
+              decoration: BoxDecoration(
+                color: Colors.indigo,
+                borderRadius: BorderRadius.circular(8)
+              )
+            )
+          ],
+        ),
+      );
+    };
     final _titleFontStyle = TextStyle(fontWeight: FontWeight.bold, fontSize: 28);
     final _containerWidgets = <Widget>[
       buildContainer(Colors.blue.shade900, Icons.shield_outlined, 'Total Savings', '\$23,000'),
@@ -42,10 +66,33 @@ class Home extends StatelessWidget {
       buildContainer(Colors.black, Icons.money,'Flex Dollar', '\$10000'),
       buildContainer(Colors.grey.shade400, Icons.video_camera_back, 'Flex Naira', '\$200'),
     ];
+
+    final TodoList = () {
+      return Container(
+        margin: EdgeInsets.only(top: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ListTile(
+              leading: Icon(Icons.check_circle_outline_outlined),
+              title: Text('Add your BVN.'),
+
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+                 side:BorderSide(
+                   color: Colors.grey,
+                   width: 0.8
+                   )
+                 ),
+            )
+          ],
+          ),
+      );
+    };
     return Scaffold(
       
       body: Container(
-        padding: EdgeInsets.only(top: 20, left: 10, right: 10, bottom: 20),
+        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 15),
         child: ListView(
           shrinkWrap: true,
           children: [
@@ -68,6 +115,9 @@ class Home extends StatelessWidget {
                    },
                  ),
                ),
+
+               getStartedWithPiggyVest(),
+               TodoList()
           ]
           
         ),
@@ -75,3 +125,4 @@ class Home extends StatelessWidget {
     );
   }
 }
+
