@@ -13,10 +13,15 @@ class Home extends StatelessWidget {
       return GestureDetector(
           child: Container(
           alignment: Alignment.centerLeft,
+          padding: EdgeInsets.symmetric(vertical: 20),
           child: ListTile(
             leading: Icon(icon, color: Colors.white,size: 30,),
             title: Text(titleText, style: TextStyle(color: Colors.white),),
-            subtitle: Text(subText, style: TextStyle(color: Colors.white, fontSize: 25)),
+            subtitle: Padding(
+              padding: const EdgeInsets.only(top: 5),
+              child: Text(subText, style: TextStyle(color: Colors.white, fontSize: 20)),
+            ),
+            
           ),
           width: MediaQuery.of(context).size.width / 2 + 100,
           margin: EdgeInsets.only(right: 15),
@@ -51,7 +56,7 @@ class Home extends StatelessWidget {
             ),
             
              Container(
-               height: 160,
+               height: 150,
                padding: EdgeInsets.symmetric(vertical: 20),
                width: double.infinity,
                  child: ListView.builder(
