@@ -54,7 +54,6 @@ class Home extends StatelessWidget {
                height: 160,
                padding: EdgeInsets.symmetric(vertical: 20),
                width: double.infinity,
-               child: Scrollbar(
                  child: ListView.builder(
                    scrollDirection: Axis.horizontal,
                    itemCount: 4,
@@ -64,7 +63,6 @@ class Home extends StatelessWidget {
                    },
                  ),
                ),
-             )
           ]
           
         ),
