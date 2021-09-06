@@ -67,15 +67,12 @@ class Home extends StatelessWidget {
       buildContainer(Colors.grey.shade400, Icons.video_camera_back, 'Flex Naira', '\$200'),
     ];
 
-    final TodoList = () {
-      return Container(
-        margin: EdgeInsets.only(top: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ListTile(
-              leading: Icon(Icons.check_circle_outline_outlined),
-              title: Text('Add your BVN.'),
+    final listTile = (String actionText) {
+      return Padding(
+        padding: EdgeInsets.symmetric(vertical: 10),
+        child: ListTile(
+              leading: Icon(Icons.check_circle_outline_outlined, color: Colors.indigo,),
+              title: Text(actionText),
 
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8),
@@ -85,6 +82,20 @@ class Home extends StatelessWidget {
                    )
                  ),
             )
+      );
+    };
+
+    final todoList = () {
+      return Container(
+        margin: EdgeInsets.only(top: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            listTile('Add your bvn'),
+            listTile('Turn on your PiggyBank Autosave.'),
+            listTile('Safelock \$40000 for 90 days'),
+            listTile('Set your security question.'),
+
           ],
           ),
       );
@@ -117,7 +128,7 @@ class Home extends StatelessWidget {
                ),
 
                getStartedWithPiggyVest(),
-               TodoList()
+               todoList()
           ]
           
         ),
