@@ -16,11 +16,11 @@ class Savings extends StatelessWidget {
         child: Column(
           children: [
             Icon(icon),
-            SizedBox(height: 40),
+            SizedBox(height: 20),
             Text(title),
-            SizedBox(height: 40),
+            SizedBox(height: 20),
             Text(subtitle),
-            SizedBox(height: 60),
+            SizedBox(height: 20),
             Text('\$$price')
           ],
         )
@@ -40,9 +40,10 @@ class Savings extends StatelessWidget {
               subtitle: Text('\$28,000', style: TextStyle(fontSize:18, color: Colors.indigo, fontWeight: FontWeight.bold )),
             ),
             SizedBox(
-              height: 100
+              height: 50
             ),
-            Expanded(
+            Container(
+              height: 300,
               child: GridView.count(
                 shrinkWrap: true,
                 
