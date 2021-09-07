@@ -7,6 +7,8 @@ class Savings extends StatelessWidget {
 
     final _gridItem = (Color color, IconData icon, String title, String subtitle, String price) {
       return Container(
+        padding: EdgeInsets.all(15),
+        height: 150,
         decoration: BoxDecoration(
           color: color,
           borderRadius: BorderRadius.circular(8)
@@ -27,9 +29,10 @@ class Savings extends StatelessWidget {
 
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.only(top: 30),
+        padding: EdgeInsets.only(top: 30, left: 15, right: 15),
         height: double.infinity,
         child: ListView(
+          shrinkWrap: true,
           children: [
             ListTile(
               title: Text('Savings', style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),),
@@ -39,16 +42,21 @@ class Savings extends StatelessWidget {
             SizedBox(
               height: 100
             ),
-            GridView.count(
-              crossAxisCount: 2,
-              
-              children: [
-                _gridItem(Colors.blue.shade200,Icons.shield_outlined,'Piggybank', 'Strict saving automatically weekly or daily', '1200'),
-                _gridItem(Colors.pink.shade200,Icons.shield_outlined,'Piggybank', 'Strict saving automatically weekly or daily', '1200'),
-                _gridItem(Colors.grey.shade200,Icons.shield_outlined,'Piggybank', 'Strict saving automatically weekly or daily', '1200'),
-                _gridItem(Colors.green.shade200,Icons.shield_outlined,'Piggybank', 'Strict saving automatically weekly or daily', '1200'),
+            Expanded(
+              child: GridView.count(
+                shrinkWrap: true,
                 
-            ],)
+                crossAxisCount: 2,
+                mainAxisSpacing: 20,
+                crossAxisSpacing: 20,
+                children: [
+                  _gridItem(Colors.blue.shade100,Icons.shield_outlined,'Piggybank', 'Strict saving automatically weekly or daily', '1200'),
+                  _gridItem(Colors.pink.shade100,Icons.shield_outlined,'Piggybank', 'Strict saving automatically weekly or daily', '1200'),
+                  _gridItem(Colors.grey.shade100,Icons.shield_outlined,'Piggybank', 'Strict saving automatically weekly or daily', '1200'),
+                  _gridItem(Colors.green.shade100,Icons.shield_outlined,'Piggybank', 'Strict saving automatically weekly or daily', '1200'),
+                  
+              ],),
+            )
           ],
         )
       ),
