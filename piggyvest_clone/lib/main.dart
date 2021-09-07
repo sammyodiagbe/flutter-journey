@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:piggyvest_clone/screens/home.dart';
+import 'package:piggyvest_clone/screens/savings.dart';
 import 'package:piggyvest_clone/screens/school.dart';
 
 void main() {
@@ -41,9 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   final List<Widget> _widgetOptions = <Widget>[
     Home(),
-    Text(
-      'Index 1: Business',
-    ),
+    Savings(),
     School(),
     Text(
       'Index 3: Profile',
@@ -60,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
         items: [
         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home', ),
 
-        BottomNavigationBarItem(icon: Icon(Icons.app_blocking), label: 'blocking',),
+        BottomNavigationBarItem(icon: Icon(Icons.savings), label: 'Savings',),
         BottomNavigationBarItem(icon: Icon(Icons.school), label: 'School',),
         BottomNavigationBarItem(icon: Icon(Icons.verified_user_rounded), label: 'Profile',),
         BottomNavigationBarItem(icon: Icon(Icons.add_a_photo), label: 'Add photo',),
