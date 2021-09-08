@@ -17,12 +17,15 @@ class Savings extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Icon(icon),
-            SizedBox(height: 20),
-            Text(title),
-            SizedBox(height: 20),
-            Text(subtitle),
-            SizedBox(height: 20),
-            Text('\$$price')
+            SizedBox(height: 15),
+            Text(title, style: TextStyle(fontWeight: FontWeight.bold),),
+            SizedBox(height: 10),
+            Expanded(child: Text(subtitle)),
+            SizedBox(height: 10),
+            Align(
+              alignment: Alignment.bottomLeft,
+              child: Text('\$$price')
+              )
           ],
         )
       );
@@ -51,7 +54,7 @@ class Savings extends StatelessWidget {
                       children: [
                          Expanded(child: _gridItem(Colors.blue.shade100,Icons.shield_outlined,'Piggybank', 'Strict saving automatically weekly or daily', '1200')),
                          SizedBox(width: 20,),
-                          Expanded(child: _gridItem(Colors.pink.shade100,Icons.shield_outlined,'Piggybank', 'Safelock 50k', '1200')),
+                          Expanded(child: _gridItem(Colors.pink.shade100,Icons.video_camera_back_outlined,'Flex Naira', 'Flexible savings for emergencies, free transfers, withdrawals etc.', '50')),
                       ],
                     ),
               ),
@@ -61,9 +64,9 @@ class Savings extends StatelessWidget {
               child: Container(
                 child: Row(
                       children: [
-                         Expanded(child: _gridItem(Colors.grey.shade100,Icons.shield_outlined,'Piggybank', 'Strict saving automatically weekly or daily', '1200')),
+                         Expanded(child: _gridItem(Colors.grey.shade100,Icons.lock_outlined,'Piggybank', 'Strict saving automatically weekly or daily', '1200')),
                          SizedBox(width: 20,),
-                          Expanded(child: _gridItem(Colors.green.shade100,Icons.shield_outlined,'Piggybank', 'Strict saving automatically weekly or daily', '1200')),
+                          Expanded(child: _gridItem(Colors.green.shade100,Icons.track_changes,'Piggybank', 'Strict saving automatically weekly or daily', '1200')),
                       ],
                     ),
               ),

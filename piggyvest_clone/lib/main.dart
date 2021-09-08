@@ -60,9 +60,9 @@ class _MyHomePageState extends State<MyHomePage> {
         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home', ),
 
         BottomNavigationBarItem(icon: Icon(Icons.savings), label: 'Savings',),
-        BottomNavigationBarItem(icon: Icon(Icons.school), label: 'School',),
-        BottomNavigationBarItem(icon: Icon(Icons.verified_user_rounded), label: 'Profile',),
-        BottomNavigationBarItem(icon: Icon(Icons.add_a_photo), label: 'Add photo',),
+        BottomNavigationBarItem(icon: Icon(Icons.show_chart), label: 'School',),
+        BottomNavigationBarItem(icon: Icon(Icons.apps_outlined), label: 'Apps',),
+        BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Account',),
       ],
       currentIndex: _selectedIndex,
       backgroundColor: Colors.white,
