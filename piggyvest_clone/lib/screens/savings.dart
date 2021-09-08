@@ -5,7 +5,7 @@ class Savings extends StatelessWidget {
 
   Widget build(BuildContext context) {
 
-    final _gridItem = (Color color, IconData icon, String title, String subtitle, String price) {
+    final _gridItem = (Color color,Color textColorAndIconColor, IconData icon, String title, String subtitle, String price) {
       return Container(
         height: 220,
         padding: EdgeInsets.all(15),
@@ -16,9 +16,9 @@ class Savings extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Icon(icon),
+            Icon(icon, color: textColorAndIconColor),
             SizedBox(height: 15),
-            Text(title, style: TextStyle(fontWeight: FontWeight.bold),),
+            Text(title, style: TextStyle(fontWeight: FontWeight.bold, color: textColorAndIconColor),),
             SizedBox(height: 10),
             Expanded(child: Text(subtitle)),
             SizedBox(height: 10),
@@ -53,9 +53,9 @@ class Savings extends StatelessWidget {
               child: Container(
                 child: Row(
                       children: [
-                         Expanded(child: _gridItem(Colors.blue.shade100,Icons.shield_outlined,'Piggybank', 'Strict saving automatically weekly or daily', '1200')),
+                         Expanded(child: _gridItem(Colors.blue.shade100, Colors.blue.shade400,Icons.shield_outlined,'Piggybank', 'Strict saving automatically weekly or daily', '1200')),
                          SizedBox(width: 20,),
-                          Expanded(child: _gridItem(Colors.pink.shade100,Icons.video_camera_back_outlined,'Flex Naira', 'Flexible savings for emergencies, free transfers, withdrawals etc.', '50')),
+                          Expanded(child: _gridItem(Colors.pink.shade100,Colors.pink.shade400,Icons.video_camera_back_outlined,'Flex Naira', 'Flexible savings for emergencies, free transfers, withdrawals etc.', '50')),
                       ],
                     ),
               ),
@@ -65,9 +65,9 @@ class Savings extends StatelessWidget {
               child: Container(
                 child: Row(
                       children: [
-                         Expanded(child: _gridItem(Colors.grey.shade100,Icons.lock_outlined,'Safelock', 'Lock funds to avoid temptation, upfront interest, up to 13% p.a.', '300')),
+                         Expanded(child: _gridItem(Colors.grey.shade100,Colors.blue.shade400,Icons.lock_outlined,'Safelock', 'Lock funds to avoid temptation, upfront interest, up to 13% p.a.', '300')),
                          SizedBox(width: 20,),
-                          Expanded(child: _gridItem(Colors.green.shade100,Icons.track_changes,'Piggybank', 'Reach your individual saving goals. 9% p.a', '1200')),
+                          Expanded(child: _gridItem(Colors.green.shade100,Colors.green.shade400,Icons.track_changes,'Piggybank', 'Reach your individual saving goals. 9% p.a', '1200')),
                       ],
                     ),
               ),
