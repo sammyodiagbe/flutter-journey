@@ -59,8 +59,8 @@ class _MyHomePageState extends State<MyHomePage> {
         items: [
         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home', ),
 
-        BottomNavigationBarItem(icon: Icon(Icons.savings), label: 'Savings',),
-        BottomNavigationBarItem(icon: Icon(Icons.show_chart), label: 'Invest',),
+        BottomNavigationBarItem(icon: Icon(Icons.track_changes), label: 'Savings',),
+        BottomNavigationBarItem(icon: Icon(Icons.savings), label: 'Invest',),
         BottomNavigationBarItem(icon: Icon(Icons.apps_outlined), label: 'Apps',),
         BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Account',),
       ],

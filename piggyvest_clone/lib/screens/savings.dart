@@ -7,7 +7,7 @@ class Savings extends StatelessWidget {
 
     final _gridItem = (Color color,Color textColorAndIconColor, IconData icon, String title, String subtitle, String price) {
       return Container(
-        height: 220,
+        height: 200,
         padding: EdgeInsets.all(15),
         decoration: BoxDecoration(
           color: color,
@@ -33,7 +33,7 @@ class Savings extends StatelessWidget {
 
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.only(top: 30, left: 15, right: 15),
+        padding: EdgeInsets.only(top: 30, left: 15, right: 15, bottom: 30),
         height: double.infinity,
         
         child: ListView(
