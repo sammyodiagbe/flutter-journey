@@ -7,6 +7,7 @@ class Savings extends StatelessWidget {
 
     final _gridItem = (Color color, IconData icon, String title, String subtitle, String price) {
       return Container(
+        height: 220,
         padding: EdgeInsets.all(15),
         decoration: BoxDecoration(
           color: color,
@@ -50,7 +51,7 @@ class Savings extends StatelessWidget {
                       children: [
                          Expanded(child: _gridItem(Colors.blue.shade100,Icons.shield_outlined,'Piggybank', 'Strict saving automatically weekly or daily', '1200')),
                          SizedBox(width: 20,),
-                          Expanded(child: _gridItem(Colors.pink.shade100,Icons.shield_outlined,'Piggybank', 'Strict saving automatically weekly or daily', '1200')),
+                          Expanded(child: _gridItem(Colors.pink.shade100,Icons.shield_outlined,'Piggybank', 'Safelock 50k', '1200')),
                       ],
                     ),
               ),
