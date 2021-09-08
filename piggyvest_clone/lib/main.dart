@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<Widget> _widgetOptions = <Widget>[
     Home(),
     Savings(),
-    School(),
+    Invest(),
     Text(
       'Index 3: Profile',
     ),
