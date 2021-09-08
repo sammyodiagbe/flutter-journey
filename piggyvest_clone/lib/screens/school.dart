@@ -14,7 +14,7 @@ class _InvestState extends State<Invest> with SingleTickerProviderStateMixin{
   @override
   void initState() {
 
-    _tabController = TabController(length: 2, vsync: this);
+    _tabController = TabController(length: 3, vsync: this);
     super.initState();
   }
 
@@ -29,6 +29,7 @@ class _InvestState extends State<Invest> with SingleTickerProviderStateMixin{
 
     return SafeArea(
       child: Container(
+
         height: double.infinity,
         child: ListView(
           children: [
@@ -40,7 +41,33 @@ class _InvestState extends State<Invest> with SingleTickerProviderStateMixin{
             ),
             SizedBox(height: 20),
             Image(image: AssetImage("assets/image.png"),),
-            SizedBox(height: 20)
+            SizedBox(height: 20),
+            Container(
+              width: double.infinity,
+              margin: EdgeInsets.symmetric(horizontal: 10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+                color: Colors.grey.shade300,
+              ),
+              child: TabBar(
+                controller: _tabController,
+                labelColor: Colors.white,
+                unselectedLabelStyle: TextStyle(color: Colors.black26, fontWeight: FontWeight.bold),
+                unselectedLabelColor: Colors.black,
+                onTap: ( index) {
+                  print(index);
+                },
+                indicator: BoxDecoration(
+                  borderRadius: _tabController.index == 0 ? BorderRadius.only(bottomLeft: Radius.circular(25), topLeft: Radius.circular(25)) : _tabController.index == 2 ? BorderRadius.only(bottomRight: Radius.circular(25), topRight: Radius.circular(25)) : BorderRadius.circular(0),
+                  color: Colors.pink
+                ),
+                tabs: [
+                  Tab(child: Text('Active'),),
+                  Tab(child: Text('Explore')),
+                  Tab(child: Text('Mature'))
+                ],
+              ),
+            )
           ],
         ),
       ),
