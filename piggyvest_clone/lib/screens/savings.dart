@@ -41,13 +41,14 @@ class Savings extends StatelessWidget {
           children: [
             ListTile(
               title: Text('Savings', style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),),
-              trailing: IconButton(icon: Icon(Icons.warning_amber_rounded, color: Colors.indigo,), iconSize: 32, onPressed: (){},),
+              trailing: IconButton(icon: Icon(Icons.error_outline, color: Colors.indigo,), iconSize: 32, onPressed: (){},),
               subtitle: Text('\$28,000', style: TextStyle(fontSize:18, color: Colors.indigo, fontWeight: FontWeight.bold )),
             ),
             SizedBox(
               height: 30
             ),
-
+            Container(child: Image(image: AssetImage('assets/image.png'),),),
+            SizedBox(height: 20),
             Container(
               child: Container(
                 child: Row(
@@ -64,9 +65,9 @@ class Savings extends StatelessWidget {
               child: Container(
                 child: Row(
                       children: [
-                         Expanded(child: _gridItem(Colors.grey.shade100,Icons.lock_outlined,'Piggybank', 'Strict saving automatically weekly or daily', '1200')),
+                         Expanded(child: _gridItem(Colors.grey.shade100,Icons.lock_outlined,'Safelock', 'Lock funds to avoid temptation, upfront interest, up to 13% p.a.', '300')),
                          SizedBox(width: 20,),
-                          Expanded(child: _gridItem(Colors.green.shade100,Icons.track_changes,'Piggybank', 'Strict saving automatically weekly or daily', '1200')),
+                          Expanded(child: _gridItem(Colors.green.shade100,Icons.track_changes,'Piggybank', 'Reach your individual saving goals. 9% p.a', '1200')),
                       ],
                     ),
               ),
