@@ -44,12 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
     Home(),
     Savings(),
     Invest(),
-    Text(
-      'Index 3: Profile',
-    ),
-    Text(
-      'Index 4: Add photo',
-    ),
+    
   ];
   @override
   Widget build(BuildContext context) {
@@ -61,8 +56,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
         BottomNavigationBarItem(icon: Icon(Icons.track_changes), label: 'Savings',),
         BottomNavigationBarItem(icon: Icon(Icons.savings), label: 'Invest',),
-        BottomNavigationBarItem(icon: Icon(Icons.apps_outlined), label: 'Apps',),
-        BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Account',),
       ],
       currentIndex: _selectedIndex,
       backgroundColor: Colors.white,
