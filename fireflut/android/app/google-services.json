@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "820554620753",
+    "project_id": "fireflut-46286",
+    "storage_bucket": "fireflut-46286.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:820554620753:android:11afb84890e35e6753bd70",
+        "android_client_info": {
+          "package_name": "com.example.fireflut"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "820554620753-u9q5ukcvos2lohudc7kf1f5v0aaiknpk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkFLXZlfAFutLzNaa-14JMhksJN1uKcIQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "820554620753-u9q5ukcvos2lohudc7kf1f5v0aaiknpk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
