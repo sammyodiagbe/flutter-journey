@@ -31,8 +31,8 @@ class _AppScreenState extends State<AppScreen> {
                     Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
                     data['id'] = document.id;
                     return ListTile(
-                      title: data['bywhom'] ? Text('yes') : Text('no'),
-                      subtitle: Text(data['talk']),
+                      title: Text(data['age']),
+                      subtitle: Text(data['name']),
                       trailing: IconButton(
                         icon: Icon(Icons.delete),
                         onPressed: () {
