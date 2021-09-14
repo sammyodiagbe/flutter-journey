@@ -11,7 +11,7 @@ import 'package:flutter/foundation.dart';
 
 class AuthProvider with ChangeNotifier {
 
-  AuthState() {
+  AuthProvider() {
     init();
   }
   AuthenticationState _authState = AuthenticationState.Unauthenticated;
