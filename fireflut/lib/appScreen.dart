@@ -16,6 +16,7 @@ class _AppScreenState extends State<AppScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: double.infinity,
       child: StreamBuilder<QuerySnapshot> (
             stream: _stream,
             builder: (context, AsyncSnapshot<QuerySnapshot> snapshot ){
@@ -28,10 +29,20 @@ class _AppScreenState extends State<AppScreen> {
                   shrinkWrap: true,
                   children: snapshot.data!.docs.map((document) {
                     Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
-                    print(data);
+                    data['id'] = document.id;
                     return ListTile(
                       title: data['bywhom'] ? Text('yes') : Text('no'),
                       subtitle: Text(data['talk']),
+                      trailing: IconButton(
+                        icon: Icon(Icons.delete),
+                        onPressed: () {
+                          print(data['id']);
+                          _talks.doc(data['id'])
+                          .delete()
+                          .then((value) => print('done deleting'))
+                          .catchError((onError) => print('Something broke $onError'));
+                        }
+                      ),
                     );
                   }).toList(),
                 );
