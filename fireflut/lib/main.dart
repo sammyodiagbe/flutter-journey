@@ -1,4 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:fireflut/screens/loginScreen.dart';
 import 'package:fireflut/utils/AuthProvider.dart';
 import "package:flutter/material.dart";
 import 'package:provider/provider.dart';
@@ -41,7 +42,7 @@ class _SpellBattleState extends State<SpellBattle> {
               child: Consumer<AuthProvider>(
                 builder: (context, appState, _) {
                   if(appState.getState == AuthenticationState.Unauthenticated) {
-                    return Text('Not authenticated');
+                    return Login();
                   }
                   return Text('Hello bitches');
                 },
