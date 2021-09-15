@@ -37,7 +37,7 @@ class _LoginState extends State<Login> {
                 margin: EdgeInsets.only(bottom: 20),
                 child: Form(
                   key: _formKey,
-                  autovalidateMode: AutovalidateMode.always,
+                  // autovalidateMode: AutovalidateMode.always,
                   child: Column(
 
                     children: [
@@ -89,12 +89,14 @@ class _LoginState extends State<Login> {
                            children: [
                              Container(
                                 child: ElevatedButton(
-                  
+                                  style: ElevatedButton.styleFrom(padding: EdgeInsets.all(15),),
                                   child: Text('Send me in'),
                                   onPressed: (){},
                                   ),
                               ),
                               OutlinedButton(
+                                style: OutlinedButton.styleFrom(padding: EdgeInsets.all(15), ),
+                                
                                 onPressed: (){}, 
                                 child: Text('Create an account', style: TextStyle(color: Colors.white)
                                 ),
