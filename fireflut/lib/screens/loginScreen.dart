@@ -89,14 +89,11 @@ class _LoginState extends State<Login> {
                            children: [
                              Container(
                                 child: ElevatedButton(
-                                  style: ElevatedButton.styleFrom(padding: EdgeInsets.all(15),),
-                                  child: Text('Send me in'),
+                                  child: Text('Send me in', style: TextStyle(fontWeight: FontWeight.bold),),
                                   onPressed: (){},
                                   ),
                               ),
                               OutlinedButton(
-                                style: OutlinedButton.styleFrom(padding: EdgeInsets.all(15), ),
-                                
                                 onPressed: (){}, 
                                 child: Text('Create an account', style: TextStyle(color: Colors.white)
                                 ),
