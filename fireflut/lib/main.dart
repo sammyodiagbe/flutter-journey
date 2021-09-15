@@ -41,8 +41,10 @@ class _SpellBattleState extends State<SpellBattle> {
         ),
         // canvasColor: Color(0xff1E3163),
         brightness: Brightness.dark,
-        buttonTheme: ButtonThemeData(
-          buttonColor: Color(0xff80ED99),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ButtonStyle(
+            backgroundColor: MaterialStateColor.resolveWith((states) => Color(0xff80ED99)),
+          )
         ),
         
       ),

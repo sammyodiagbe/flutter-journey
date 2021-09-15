@@ -82,7 +82,7 @@ class _LoginState extends State<Login> {
                                   onPressed: (){},
                                   ),
                               ),
-                              TextButton(
+                              OutlinedButton(
                                 onPressed: (){}, 
                                 child: Text('Create an account', style: TextStyle(color: Colors.white)
                                 ),
