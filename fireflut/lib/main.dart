@@ -34,15 +34,15 @@ class _SpellBattleState extends State<SpellBattle> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        textTheme: GoogleFonts.alataTextTheme(),
+        textTheme: GoogleFonts.rubikTextTheme(),
         primaryColor: Color(0xff1E3163),
         iconTheme: IconThemeData(
           size: 20
         ),
-        canvasColor: Color(0xff1E3163),
-        // brightness: Brightness.dark,
+        // canvasColor: Color(0xff1E3163),
+        brightness: Brightness.dark,
         buttonTheme: ButtonThemeData(
-          buttonColor: Color(0xff28FFBF),
+          buttonColor: Color(0xff80ED99),
         ),
         
       ),
