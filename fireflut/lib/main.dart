@@ -39,11 +39,12 @@ class _SpellBattleState extends State<SpellBattle> {
         iconTheme: IconThemeData(
           size: 20
         ),
-        // canvasColor: Color(0xff1E3163),
-        brightness: Brightness.dark,
+        canvasColor: Color(0xff1E3163),
+        // brightness: Brightness.dark,
         buttonTheme: ButtonThemeData(
           buttonColor: Color(0xff28FFBF),
-        )
+        ),
+        
       ),
       home: Scaffold(
         body: Container(
