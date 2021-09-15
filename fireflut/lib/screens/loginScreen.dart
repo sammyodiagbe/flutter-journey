@@ -37,6 +37,7 @@ class _LoginState extends State<Login> {
                 margin: EdgeInsets.only(bottom: 20),
                 child: Form(
                   key: _formKey,
+                  autovalidateMode: AutovalidateMode.always,
                   child: Column(
 
                     children: [
@@ -45,7 +46,12 @@ class _LoginState extends State<Login> {
                         child: TextFormField(
                           keyboardType: TextInputType.emailAddress,
                           style: TextStyle(color: Colors.white),
-                          
+                          validator: (value) {
+                            if(value == null || value.isEmpty) {
+                              return '*Please enter some text.';
+                            }
+                            return null;
+                          },
                           decoration: InputDecoration(
                             hintStyle: TextStyle(color: Colors.white60),
                             border: OutlineInputBorder(),
@@ -59,6 +65,12 @@ class _LoginState extends State<Login> {
                         child: TextFormField(
                           keyboardType: TextInputType.text,
                           obscureText: true,
+                          validator: (value) {
+                            if(value == null || value.isEmpty) {
+                              return '*Please enter some text.';
+                            }
+                            return null;
+                          },
                           style: TextStyle(color: Colors.white),
                           decoration: InputDecoration(
                             hintStyle: TextStyle(color: Colors.white60),
