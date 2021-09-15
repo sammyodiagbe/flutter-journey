@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:fireflut/screens/loginScreen.dart';
+import 'package:fireflut/screens/signupScreen.dart';
 import 'package:fireflut/utils/AuthProvider.dart';
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
@@ -33,6 +34,10 @@ class _SpellBattleState extends State<SpellBattle> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      routes: {
+        'login': (context) => Login(),
+        'signup': (context) => Signup()
+      },
       theme: ThemeData(
         textTheme: GoogleFonts.rubikTextTheme(),
         primaryColor: Color(0xff1E3163),

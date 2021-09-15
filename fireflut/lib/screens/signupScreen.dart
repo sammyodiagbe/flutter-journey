@@ -1,13 +1,13 @@
 import 'package:fireflut/utils/sizes.dart';
 import "package:flutter/material.dart";
 
-class Login extends StatefulWidget {
+class Signup extends StatefulWidget {
 
   @override
-  State<Login> createState() => _LoginState();
+  State<Signup> createState() => _SignupState();
 }
 
-class _LoginState extends State<Login> {
+class _SignupState extends State<Signup> {
 
   GlobalKey _formKey = GlobalKey<FormState>();
   @override 
@@ -30,7 +30,7 @@ class _LoginState extends State<Login> {
               height: 100,
               
               child: Center(
-                child: Text('Login into your account', style: loginSignupHeader)
+                child: Text('Create an account.', style: loginSignupHeader)
                 )
               ),
               Container(
@@ -89,15 +89,15 @@ class _LoginState extends State<Login> {
                            children: [
                              Container(
                                 child: ElevatedButton(
-                                  child: Text('Send me in', style: TextStyle(fontWeight: FontWeight.bold),),
+                                  child: Text('Create account', style: TextStyle(fontWeight: FontWeight.bold),),
                                   onPressed: (){},
                                   ),
                               ),
                               OutlinedButton(
                                 onPressed: (){
-                                  Navigator.of(context).pushReplacementNamed("signup");
+                                  Navigator.of(context).pushReplacementNamed('login');
                                 }, 
-                                child: Text('Create an account', style: TextStyle(color: Colors.white)
+                                child: Text('Already have an account.', style: TextStyle(color: Colors.white)
                                 ),
                                 ),
                            ],
