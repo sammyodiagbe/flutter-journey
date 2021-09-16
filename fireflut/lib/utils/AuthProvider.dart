@@ -23,6 +23,7 @@ class AuthProvider with ChangeNotifier {
         // simply means the user is logged out
         _authState = AuthenticationState.Unauthenticated;
       }else {
+        print('Authenticated yo');
         _authState = AuthenticationState.Authenticated;
       }
       notifyListeners();
@@ -30,19 +31,20 @@ class AuthProvider with ChangeNotifier {
   }
 
    Future<void> createAccount(String email, String password) async{
-    await _auth.createUserWithEmailAndPassword(email: email, password: password)
+     _auth.createUserWithEmailAndPassword(email: email, password: password)
     .then((value){
-      print(value);
+      _authState = AuthenticationState.Authenticated;
     })
     .catchError((onError) {
       print(onError);
     });
+    
   }
 
-  Future<void> login(String email, String password) async {
+  Future<void> login(String email, String password)  async {
     signingIn = true;
     notifyListeners();
-    await _auth.signInWithEmailAndPassword(email: email, password: password)
+    _auth.signInWithEmailAndPassword(email: email, password: password)
     .then((value)  {
       signingIn = false;
     })
