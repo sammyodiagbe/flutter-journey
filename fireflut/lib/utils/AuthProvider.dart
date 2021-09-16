@@ -18,7 +18,7 @@ class AuthProvider with ChangeNotifier {
   FirebaseAuth _auth = FirebaseAuth.instance;
 
   void init() {
-    _auth.userChanges().listen((user) {
+    _auth.authStateChanges().listen((user) {
       if(user == null) {
         // simply means the user is logged out
         _authState = AuthenticationState.Unauthenticated;
