@@ -9,7 +9,7 @@ class Signup extends StatefulWidget {
 
 class _SignupState extends State<Signup> {
 
-  GlobalKey _formKey = GlobalKey<FormState>();
+  final _formKey = GlobalKey<FormState>();
   @override 
   Widget build(BuildContext context) {
 
@@ -37,7 +37,7 @@ class _SignupState extends State<Signup> {
                 margin: EdgeInsets.only(bottom: 20),
                 child: Form(
                   key: _formKey,
-                  // autovalidateMode: AutovalidateMode.always,
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
                   child: Column(
 
                     children: [
@@ -46,6 +46,7 @@ class _SignupState extends State<Signup> {
                         child: TextFormField(
                           keyboardType: TextInputType.emailAddress,
                           style: TextStyle(color: Colors.white),
+                          
                           validator: (value) {
                             if(value == null || value.isEmpty) {
                               return '*Please enter some text.';
@@ -54,7 +55,9 @@ class _SignupState extends State<Signup> {
                           },
                           decoration: InputDecoration(
                             hintStyle: TextStyle(color: Colors.white60),
-                            border: OutlineInputBorder(),
+                            // enabledBorder: OutlineInputBorder(
+                            //   borderSide: BorderSide(color: Colors.white60,style:BorderStyle.solid )
+                            // ),
                             hintText: 'Email address',
                             focusColor: Colors.white,
                           )
@@ -74,8 +77,6 @@ class _SignupState extends State<Signup> {
                           style: TextStyle(color: Colors.white),
                           decoration: InputDecoration(
                             hintStyle: TextStyle(color: Colors.white60),
-                            
-                            border: OutlineInputBorder(),
                             hintText: 'Password',
                             focusColor: Colors.white
                             
@@ -90,7 +91,11 @@ class _SignupState extends State<Signup> {
                              Container(
                                 child: ElevatedButton(
                                   child: Text('Create account', style: TextStyle(fontWeight: FontWeight.bold),),
-                                  onPressed: (){},
+                                  onPressed: (){
+                                    if(_formKey.currentState!.validate() ){
+
+                                    }
+                                  },
                                   ),
                               ),
                               OutlinedButton(
