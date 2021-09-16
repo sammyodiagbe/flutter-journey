@@ -47,7 +47,7 @@ class _SpellBattleState extends State<SpellBattle> {
         canvasColor: Color(0xff1E3163),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            primary: Colors.blueAccent,
+            primary: Color(0xff57CC99),
             padding: EdgeInsets.all(15)
           )
         ),
