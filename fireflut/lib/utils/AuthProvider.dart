@@ -14,6 +14,7 @@ class AuthProvider with ChangeNotifier {
   }
   AuthenticationState _authState = AuthenticationState.Unauthenticated;
   AuthenticationState get  getState => _authState;
+  bool signingIn = false;
   FirebaseAuth _auth = FirebaseAuth.instance;
 
   void init() {
@@ -39,9 +40,17 @@ class AuthProvider with ChangeNotifier {
   }
 
   Future<void> login(String email, String password) async {
+    signingIn = true;
+    notifyListeners();
     await _auth.signInWithEmailAndPassword(email: email, password: password)
-    .then((value) => print(value))
-    .catchError((onError) => print(onError));
+    .then((value)  {
+      signingIn = false;
+    })
+    .catchError((onError) {
+      signingIn = false;
+      
+    });
+    notifyListeners();
   }
 
   Future<void> logout() async {

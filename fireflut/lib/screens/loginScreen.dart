@@ -105,11 +105,22 @@ class _LoginState extends State<Login> {
                                 child: Consumer<AuthProvider>(
                                   builder: (context, provider, _) {
                                     return ElevatedButton(
-                                    child: Text('Send me in', style: TextStyle(fontWeight: FontWeight.bold),),
+                                      style: ElevatedButton.styleFrom(
+                                        minimumSize: Size(150, 50)
+                                      ),
+                                    child: provider.signingIn ? SizedBox(
+                                      height: 20,
+                                      width: 20,
+                                      child: CircularProgressIndicator(
+                                        color: Colors.white,
+                                        
+
+                                      ),
+                                    ) :Text('Send me in', style: TextStyle(fontWeight: FontWeight.bold),),
                                     onPressed: (){
                                       // if(_loginformKey.currentState!.)
                                       if(_loginformKey.currentState!.validate()) {
-                                
+                                        provider.login(email, password);
                                       }
                                     },
                                     );
