@@ -1,5 +1,7 @@
+import 'package:fireflut/utils/AuthProvider.dart';
 import 'package:fireflut/utils/sizes.dart';
 import "package:flutter/material.dart";
+import 'package:provider/provider.dart';
 
 class Login extends StatefulWidget {
   Login({Key? key}) : super(key: key);
@@ -100,15 +102,19 @@ class _LoginState extends State<Login> {
                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                            children: [
                              Container(
-                                child: ElevatedButton(
-                                  child: Text('Send me in', style: TextStyle(fontWeight: FontWeight.bold),),
-                                  onPressed: (){
-                                    // if(_loginformKey.currentState!.)
-                                    if(_loginformKey.currentState!.validate()) {
-
-                                    }
-                                  },
-                                  ),
+                                child: Consumer<AuthProvider>(
+                                  builder: (context, provider, _) {
+                                    return ElevatedButton(
+                                    child: Text('Send me in', style: TextStyle(fontWeight: FontWeight.bold),),
+                                    onPressed: (){
+                                      // if(_loginformKey.currentState!.)
+                                      if(_loginformKey.currentState!.validate()) {
+                                
+                                      }
+                                    },
+                                    );
+                                  }
+                                ),
                               ),
                               OutlinedButton(
                                 onPressed: (){

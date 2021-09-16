@@ -38,6 +38,12 @@ class AuthProvider with ChangeNotifier {
     });
   }
 
+  Future<void> login(String email, String password) async {
+    await _auth.signInWithEmailAndPassword(email: email, password: password)
+    .then((value) => print(value))
+    .catchError((onError) => print(onError));
+  }
+
   Future<void> logout() async {
     await _auth.signOut();
   }
