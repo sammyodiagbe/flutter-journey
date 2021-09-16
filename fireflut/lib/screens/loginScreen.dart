@@ -2,14 +2,14 @@ import 'package:fireflut/utils/sizes.dart';
 import "package:flutter/material.dart";
 
 class Login extends StatefulWidget {
-
+  Login({Key? key}) : super(key: key);
   @override
   State<Login> createState() => _LoginState();
 }
 
 class _LoginState extends State<Login> {
 
-  GlobalKey _formKey = GlobalKey<FormState>();
+  GlobalKey _loginformKey = GlobalKey<FormState>();
   @override 
   Widget build(BuildContext context) {
 
@@ -36,7 +36,7 @@ class _LoginState extends State<Login> {
               Container(
                 margin: EdgeInsets.only(bottom: 20),
                 child: Form(
-                  key: _formKey,
+                  key: _loginformKey,
                   // autovalidateMode: AutovalidateMode.always,
                   child: Column(
 
@@ -90,7 +90,9 @@ class _LoginState extends State<Login> {
                              Container(
                                 child: ElevatedButton(
                                   child: Text('Send me in', style: TextStyle(fontWeight: FontWeight.bold),),
-                                  onPressed: (){},
+                                  onPressed: (){
+                                    // if(_loginformKey.currentState!.)
+                                  },
                                   ),
                               ),
                               OutlinedButton(
