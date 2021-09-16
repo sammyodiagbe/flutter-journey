@@ -9,7 +9,7 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
 
-  GlobalKey _loginformKey = GlobalKey<FormState>();
+  final GlobalKey _loginformKey = GlobalKey<FormState>();
   @override 
   Widget build(BuildContext context) {
 
@@ -18,6 +18,7 @@ class _LoginState extends State<Login> {
         height: double.infinity,
         padding: EdgeInsets.all(19),
         child: ListView(
+          
           children: [
             SizedBox(
               height: 80,
@@ -60,9 +61,7 @@ class _LoginState extends State<Login> {
                           )
                         ),
                       ),
-                      SizedBox(
-                        height: 100,
-                        child: TextFormField(
+                     TextFormField(
                           keyboardType: TextInputType.text,
                           obscureText: true,
                           validator: (value) {
@@ -81,8 +80,7 @@ class _LoginState extends State<Login> {
                             
                           )
                         ),
-                       
-                      ),
+                        SizedBox(height: 50),
                        Container(
                          child: Row(
                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -92,6 +90,7 @@ class _LoginState extends State<Login> {
                                   child: Text('Send me in', style: TextStyle(fontWeight: FontWeight.bold),),
                                   onPressed: (){
                                     // if(_loginformKey.currentState!.)
+                                    // if(_loginformKey.currentState!.validate())
                                   },
                                   ),
                               ),
