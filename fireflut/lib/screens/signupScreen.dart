@@ -78,7 +78,8 @@ class _SignupState extends State<Signup> {
                           decoration: InputDecoration(
                             hintStyle: TextStyle(color: Colors.white60),
                             hintText: 'Password',
-                            focusColor: Colors.white
+                            focusColor: Colors.white,
+                            enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
                             
                           )
                         ),

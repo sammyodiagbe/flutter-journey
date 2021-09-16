@@ -55,7 +55,7 @@ class _LoginState extends State<Login> {
                           },
                           decoration: InputDecoration(
                             hintStyle: TextStyle(color: Colors.white60),
-                            border: OutlineInputBorder(),
+                            border: UnderlineInputBorder(),
                             hintText: 'Email address',
                             focusColor: Colors.white,
                           )
@@ -74,7 +74,7 @@ class _LoginState extends State<Login> {
                           decoration: InputDecoration(
                             hintStyle: TextStyle(color: Colors.white60),
                             
-                            border: OutlineInputBorder(),
+                            border: UnderlineInputBorder(),
                             hintText: 'Password',
                             focusColor: Colors.white
                             
@@ -91,7 +91,7 @@ class _LoginState extends State<Login> {
                                   onPressed: (){
                                     // if(_loginformKey.currentState!.)
                                     if(_loginformKey.currentState!.validate()) {
-                                      
+
                                     }
                                   },
                                   ),
