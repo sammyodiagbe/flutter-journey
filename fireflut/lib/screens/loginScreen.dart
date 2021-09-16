@@ -10,8 +10,11 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
 
   final  _loginformKey = GlobalKey<FormState>();
+  String email = '';
+  String password = '';
   @override 
   Widget build(BuildContext context) {
+
 
     return Scaffold(
       body: Container(
@@ -47,6 +50,11 @@ class _LoginState extends State<Login> {
                         child: TextFormField(
                           keyboardType: TextInputType.emailAddress,
                           style: TextStyle(color: Colors.white),
+                          onChanged: (value) {
+                            setState(() {
+                              email = value;
+                            });
+                          },
                           validator: (value) {
                             if(value == null || value.isEmpty) {
                               return '*Please enter some text.';
@@ -64,6 +72,12 @@ class _LoginState extends State<Login> {
                      TextFormField(
                           keyboardType: TextInputType.text,
                           obscureText: true,
+                          onChanged: (value) {
+                            setState(() {
+                              
+                              password = value;
+                            });
+                          },
                           validator: (value) {
                             if(value!.isEmpty) {
                               return '*Please enter some text.';

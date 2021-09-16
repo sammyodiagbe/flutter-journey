@@ -53,8 +53,7 @@ class _SpellBattleState extends State<SpellBattle> {
         ),
         
       ),
-      home: Scaffold(
-        body: Container(
+      home: Container(
           child: FutureBuilder(
             future: _initialization,
             
@@ -66,7 +65,18 @@ class _SpellBattleState extends State<SpellBattle> {
                   if(appState.getState == AuthenticationState.Unauthenticated) {
                     return Login();
                   }
-                  return Text('Hello bitches');
+                  return Column(
+                    children: [
+                      Text('Whatup people'),
+                      SizedBox(height: 50),
+                      ElevatedButton(
+                        child: Text('Log out'),
+                        onPressed: () {
+                          appState.logout();
+                        },
+                      )
+                    ],
+                  );
                 },
               ),
             );
@@ -78,7 +88,6 @@ class _SpellBattleState extends State<SpellBattle> {
             }
           ),
         ),
-      ),
     );
   }
 }

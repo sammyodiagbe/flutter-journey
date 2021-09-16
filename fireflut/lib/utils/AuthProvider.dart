@@ -16,9 +16,8 @@ class AuthProvider with ChangeNotifier {
   AuthenticationState get  getState => _authState;
   FirebaseAuth _auth = FirebaseAuth.instance;
 
-  Future<void> init() async{
-    await 
-    _auth.authStateChanges().listen((user) {
+  void init() {
+    _auth.userChanges().listen((user) {
       if(user == null) {
         // simply means the user is logged out
         _authState = AuthenticationState.Unauthenticated;
@@ -27,6 +26,20 @@ class AuthProvider with ChangeNotifier {
       }
       notifyListeners();
     });
+  }
+
+   Future<void> createAccount(String email, String password) async{
+    await _auth.createUserWithEmailAndPassword(email: email, password: password)
+    .then((value){
+      print(value);
+    })
+    .catchError((onError) {
+      print(onError);
+    });
+  }
+
+  Future<void> logout() async {
+    await _auth.signOut();
   }
 
   

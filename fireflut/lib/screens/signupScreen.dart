@@ -1,5 +1,7 @@
+import 'package:fireflut/utils/AuthProvider.dart';
 import 'package:fireflut/utils/sizes.dart';
 import "package:flutter/material.dart";
+import 'package:provider/provider.dart';
 
 class Signup extends StatefulWidget {
 
@@ -10,6 +12,8 @@ class Signup extends StatefulWidget {
 class _SignupState extends State<Signup> {
 
   final _formKey = GlobalKey<FormState>();
+  String email = '';
+  String password = '';
   @override 
   Widget build(BuildContext context) {
 
@@ -46,7 +50,12 @@ class _SignupState extends State<Signup> {
                         child: TextFormField(
                           keyboardType: TextInputType.emailAddress,
                           style: TextStyle(color: Colors.white),
-                          
+                          onChanged: (value) {
+                            setState(() {
+                              
+                              email = value;
+                            });
+                          },
                           validator: (value) {
                             if(value == null || value.isEmpty) {
                               return '*Please enter some text.';
@@ -68,6 +77,11 @@ class _SignupState extends State<Signup> {
                         child: TextFormField(
                           keyboardType: TextInputType.text,
                           obscureText: true,
+                          onChanged: (value) {
+                            setState(() {
+                              password = value;
+                            });
+                          },
                           validator: (value) {
                             if(value == null || value.isEmpty) {
                               return '*Please enter some text.';
@@ -90,14 +104,19 @@ class _SignupState extends State<Signup> {
                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                            children: [
                              Container(
-                                child: ElevatedButton(
-                                  child: Text('Create account', style: TextStyle(fontWeight: FontWeight.bold),),
-                                  onPressed: (){
-                                    if(_formKey.currentState!.validate() ){
-
-                                    }
+                                child: Consumer<AuthProvider>(
+                                  builder: (context, provider, _) {
+                                    return  ElevatedButton(
+                                    child: Text('Create account', style: TextStyle(fontWeight: FontWeight.bold),),
+                                    onPressed: (){
+                                      if(_formKey.currentState!.validate() ){
+                                        provider.createAccount(email, password);
+                                      }
+                                    },
+                                    );
                                   },
-                                  ),
+                                  
+                                ),
                               ),
                               OutlinedButton(
                                 onPressed: (){
