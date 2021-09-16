@@ -31,6 +31,7 @@ class AuthProvider with ChangeNotifier {
   }
 
    Future<void> createAccount(String email, String password) async{
+     
      _auth.createUserWithEmailAndPassword(email: email, password: password)
     .then((value){
       _authState = AuthenticationState.Authenticated;
