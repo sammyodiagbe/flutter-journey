@@ -34,13 +34,13 @@ class AuthProvider with ChangeNotifier {
 
    Future<void> createAccount(String email, String password) async{
 
-     _auth.createUserWithEmailAndPassword(email: email, password: password)
+     await _auth.createUserWithEmailAndPassword(email: email, password: password)
     .then((value){
       _authState = AuthenticationState.Authenticated;
     })
     .catchError((onError) {
-      print(onError);
-      signupErrorMessage = onError;
+      print(onError.code);
+      signupErrorMessage = onError.code!;
     });
     
   }
@@ -54,7 +54,7 @@ class AuthProvider with ChangeNotifier {
     })
     .catchError((onError) {
       signingIn = false;
-      loginErrorMessage = onError;
+      loginErrorMessage = onError.code!;
     });
     notifyListeners();
   }
