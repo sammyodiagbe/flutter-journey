@@ -39,6 +39,7 @@ class AuthProvider with ChangeNotifier {
     .then((value){
       _authState = AuthenticationState.Authenticated;
       creatingAccount = false;
+      signupErrorMessage = "";
     })
     .catchError((onError) {
       creatingAccount = false;
@@ -65,6 +66,7 @@ class AuthProvider with ChangeNotifier {
     await _auth.signInWithEmailAndPassword(email: email, password: password)
     .then((value)  {
       signingIn = false;
+      loginErrorMessage = "";
     })
     .catchError((onError) {
       signingIn = false;
