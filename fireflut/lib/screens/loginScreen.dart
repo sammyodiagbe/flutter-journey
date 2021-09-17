@@ -47,6 +47,11 @@ class _LoginState extends State<Login> {
                   child: Column(
 
                     children: [
+                      Consumer<AuthProvider>(
+                        builder: (context, provider, _) {
+                          return provider.loginErrorMessage.isNotEmpty ? Text(provider.loginErrorMessage) : Text('');
+                        },
+                      ),
                       SizedBox(
                         height: 100,
                         child: TextFormField(

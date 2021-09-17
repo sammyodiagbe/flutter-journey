@@ -1,11 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:fireflut/screens/AuthenticationScreenManger.dart';
 import 'package:fireflut/screens/Battle.dart';
-import 'package:fireflut/screens/loginScreen.dart';
-import 'package:fireflut/screens/signupScreen.dart';
 import 'package:fireflut/utils/AuthProvider.dart';
 import "package:flutter/material.dart";
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 
@@ -44,7 +41,20 @@ class _SpellBattleState extends State<SpellBattle> {
             if(appState.getState == AuthenticationState.Unauthenticated) {
               return AuthWrapper();
             }
-            return BatuGround();
+            if(appState.getState == AuthenticationState.Authenticated) {
+              return BatuGround();
+            }
+            return Container(
+              height: double.infinity,
+              child: Center(
+                child: Text('BrainBatu', 
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 32
+                 ),
+                 ),
+              ),
+            );          
           },
         );
       
