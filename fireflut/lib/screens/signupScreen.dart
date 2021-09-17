@@ -45,6 +45,12 @@ class _SignupState extends State<Signup> {
                   child: Column(
 
                     children: [
+                      Consumer<AuthProvider>(
+                        builder: (context, provider, _) {
+                          return provider.signupErrorMessage.isNotEmpty ? Text(provider.signupErrorMessage, style: TextStyle(color: Colors.red, fontSize: 14,
+                          fontWeight: FontWeight.bold),) : SizedBox();
+                        },
+                      ),
                       SizedBox(
                         height: 100,
                         child: TextFormField(
@@ -107,7 +113,13 @@ class _SignupState extends State<Signup> {
                                 child: Consumer<AuthProvider>(
                                   builder: (context, provider, _) {
                                     return  ElevatedButton(
-                                    child: Text('Create account', style: TextStyle(fontWeight: FontWeight.bold),),
+                                      style: ElevatedButton.styleFrom(
+                                        minimumSize: Size(150, 50)
+                                      ),
+                                    child: provider.creatingAccount ? SizedBox(
+                                      height: 20, width: 20,child: CircularProgressIndicator(
+                                        color: Colors.white
+                                      )) :Text('Create account', style: TextStyle(fontWeight: FontWeight.bold),),
                                     onPressed: (){
                                       if(_formKey.currentState!.validate() ){
                                         provider.createAccount(email, password);
