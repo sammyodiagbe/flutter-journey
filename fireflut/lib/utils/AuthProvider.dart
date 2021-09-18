@@ -4,7 +4,8 @@ import 'package:flutter/foundation.dart';
 
  enum AuthenticationState {
     Authenticated,
-    Unauthenticated
+    Unauthenticated,
+    VerifyingAuthState
   }
 
 class AuthProvider with ChangeNotifier {
@@ -14,7 +15,7 @@ class AuthProvider with ChangeNotifier {
   }
   String loginErrorMessage = '';
   String signupErrorMessage = '';
-  AuthenticationState _authState = AuthenticationState.Unauthenticated;
+  AuthenticationState _authState = AuthenticationState.VerifyingAuthState;
   AuthenticationState get  getState => _authState;
   bool signingIn = false;
   bool creatingAccount = false;

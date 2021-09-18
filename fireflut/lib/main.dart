@@ -38,12 +38,23 @@ class _SpellBattleState extends State<SpellBattle> {
         if(snapshot.connectionState == ConnectionState.done) {
           return Consumer<AuthProvider>(
           builder: (context, appState, _) {
+            if(appState.getState == AuthenticationState.VerifyingAuthState) {
+              return Container(
+                height: double.infinity,
+                width: double.infinity,
+                color: Color(0xff1E3163),
+                child: Center(
+                  child: Text('Brainbatu', style: TextStyle(color: Colors.white, fontSize: 35))
+                ),
+              );
+            }
+             if(appState.getState == AuthenticationState.Authenticated) {
+              return BatuGround();
+            }
             if(appState.getState == AuthenticationState.Unauthenticated) {
               return AuthWrapper();
             }
-            if(appState.getState == AuthenticationState.Authenticated) {
-              return BatuGround();
-            }
+           
             return Container(
               height: double.infinity,
               child: Center(
@@ -62,7 +73,7 @@ class _SpellBattleState extends State<SpellBattle> {
         }
         return Container(
           child: Center(
-            child: CircularProgressIndicator(),
+            child: Text('Brainbatu', style: TextStyle(color: Colors.white, fontSize: 35),),
           ),
         );
       }
