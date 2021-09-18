@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:fireflut/screens/AuthenticationScreenManger.dart';
 import 'package:fireflut/screens/Battle.dart';
+import 'package:fireflut/screens/authStateCheck.dart';
 import 'package:fireflut/utils/AuthProvider.dart';
 import "package:flutter/material.dart";
 import 'package:provider/provider.dart';
@@ -39,14 +40,7 @@ class _SpellBattleState extends State<SpellBattle> {
           return Consumer<AuthProvider>(
           builder: (context, appState, _) {
             if(appState.getState == AuthenticationState.VerifyingAuthState) {
-              return Container(
-                height: double.infinity,
-                width: double.infinity,
-                color: Color(0xff1E3163),
-                child: Center(
-                  child: Text('Brainbatu', style: TextStyle(color: Colors.white, fontSize: 35))
-                ),
-              );
+              return AuthStateDecider();
             }
              if(appState.getState == AuthenticationState.Authenticated) {
               return BatuGround();
