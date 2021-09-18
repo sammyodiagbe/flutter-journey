@@ -62,9 +62,7 @@ class _SpellBattleState extends State<SpellBattle> {
           if(snapshot.connectionState == ConnectionState.done) {
             return Consumer<AuthProvider>(
             builder: (context, appState, _) {
-              if(appState.getState == AuthenticationState.VerifyingAuthState) {
-                return AuthStateDecider();
-              }
+              
                if(appState.getState == AuthenticationState.Authenticated) {
                 return BatuGround();
               }
@@ -72,17 +70,7 @@ class _SpellBattleState extends State<SpellBattle> {
                 return AuthWrapper();
               }
              
-              return Container(
-                height: double.infinity,
-                child: Center(
-                  child: Text('BrainBatu', 
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 32
-                   ),
-                   ),
-                ),
-              );          
+              return AuthStateDecider();          
             },
           );
         

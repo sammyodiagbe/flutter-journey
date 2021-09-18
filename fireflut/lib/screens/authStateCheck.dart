@@ -9,7 +9,7 @@ class AuthStateDecider extends StatelessWidget {
         backgroundColor: Color(0xff1E3163),
         body: Container(
           child: Center(
-            child: Text('Brainbatu', style: TextStyle(color: Colors.white, fontSize: 35))
+            child: Text('Brainbatu', style: TextStyle(color: Colors.white, fontSize: 40))
           ),
         ),
       );
