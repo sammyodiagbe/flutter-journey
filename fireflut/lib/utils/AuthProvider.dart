@@ -1,6 +1,7 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
+import 'package:firebase_core/firebase_core.dart';
 
  enum AuthenticationState {
     Authenticated,
@@ -21,7 +22,7 @@ class AuthProvider with ChangeNotifier {
   bool creatingAccount = false;
   FirebaseAuth _auth = FirebaseAuth.instance;
 
-  void init() {
+  void init() async {
     _auth.authStateChanges().listen((user) {
       if(user == null) {
         // simply means the user is logged out

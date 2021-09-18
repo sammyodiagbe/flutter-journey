@@ -10,8 +10,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 
-void main() {
+void main() async{
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(
     MultiProvider(
       providers: [
@@ -32,7 +33,6 @@ class SpellBattle extends StatefulWidget {
 }
 
 class _SpellBattleState extends State<SpellBattle> {
-  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -55,12 +55,7 @@ class _SpellBattleState extends State<SpellBattle> {
         ),
         
       ),
-      home: FutureBuilder(
-        future: _initialization,
-        
-        builder: (context,snapshot){
-          if(snapshot.connectionState == ConnectionState.done) {
-            return Consumer<AuthProvider>(
+      home:  Consumer<AuthProvider>(
             builder: (context, appState, _) {
               
                if(appState.getState == AuthenticationState.Authenticated) {
@@ -72,18 +67,9 @@ class _SpellBattleState extends State<SpellBattle> {
              
               return AuthStateDecider();          
             },
-          );
-        
-        
-          }
-          return Container(
-            child: Center(
-              child: Text('Brainbatu', style: TextStyle(color: Colors.white, fontSize: 35),),
-            ),
-          );
-        }
-      ),
+          )     
+         
     );
-    
+
   }
 }
