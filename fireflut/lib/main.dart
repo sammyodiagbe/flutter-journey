@@ -60,8 +60,10 @@ class _SpellBattleState extends State<SpellBattle> {
       
       
         }
-        return Center(
-          child: CircularProgressIndicator()
+        return Container(
+          child: Center(
+            child: CircularProgressIndicator(),
+          ),
         );
       }
     );
