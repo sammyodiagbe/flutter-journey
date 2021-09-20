@@ -35,6 +35,7 @@ class AuthProvider with ChangeNotifier {
 
    Future<void> createAccount(String email, String password) async{
      creatingAccount = true;
+     signupErrorMessage = "";
      notifyListeners();
      await _auth.createUserWithEmailAndPassword(email: email, password: password)
     .then((value){
