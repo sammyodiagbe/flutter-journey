@@ -1,7 +1,6 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
-import 'package:firebase_core/firebase_core.dart';
 
  enum AuthenticationState {
     Authenticated,
@@ -64,6 +63,7 @@ class AuthProvider with ChangeNotifier {
 
   Future<void> login(String email, String password)  async {
     signingIn = true;
+    loginErrorMessage = "";
     notifyListeners();
     await _auth.signInWithEmailAndPassword(email: email, password: password)
     .then((value)  {
