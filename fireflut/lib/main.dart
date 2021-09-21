@@ -36,6 +36,7 @@ class _SpellBattleState extends State<SpellBattle> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       routes: {
         'login': (context) => Login(),
         'signup': (context) => Signup()
