@@ -64,8 +64,11 @@ class _SpellBattleState extends State<SpellBattle> {
               if(appState.getState == AuthenticationState.Unauthenticated) {
                 return AuthWrapper();
               }
-             
-              return AuthStateDecider();          
+              if(appState.getState == AuthenticationState.VerifyingAuthState) {
+                 return AuthStateDecider(); 
+              }
+             return Container();
+                      
             },
           )     
          
